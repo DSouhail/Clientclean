@@ -1,0 +1,18 @@
+<div class="columns">
+  <div class="column is-2 forImg">
+    <img [src]="datasource.imagePath" alt="{{ datasource.name }}" />
+  </div>
+  <div class="column forInfos">
+    <p class="SourceName">{{ datasource.name }}</p>
+    <p class="SourceDesc mt-2">
+      {{ datasource.description }}
+    </p>
+    <button
+      (click)="sendMessage()"
+      routerLink="/drag-drop"
+      class="button is-primary mt-2"
+    >
+      Select
+    </button>
+  </div>
+</div>

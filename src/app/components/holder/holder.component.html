@@ -1,0 +1,27 @@
+<div class="centered-content">
+  <div class="data-source-container columns">
+    <div class="sidebar has-background-light column is-3">
+      <h1 class="title">Pick a data source</h1>
+      <p class="subtitle">
+        Choose from the available data sources you can upload to or skip to
+        check already uploaded files.
+      </p>
+      <img
+        src="../../../assets/images/Searching - Looking.png"
+        alt="img-searching"
+      />
+    </div>
+    <div class="data-source-list-container has-background-white column">
+      <app-search></app-search>
+      <div class="columns">
+        <app-data-source
+          (messageEvent)="receiveMessage($event)"
+          *ngFor="let datasource of dataSources"
+          [datasource]="datasource"
+          class="column is-half"
+        ></app-data-source>
+      </div>
+    </div>
+  </div>
+</div>
+<app-drag-drop *ngIf="message === 'ATM journal'"></app-drag-drop>
